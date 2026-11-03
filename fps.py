@@ -1,9 +1,10 @@
 import cv2
+import os
 import time
 import multiprocessing
 
 
-rtsp_link = ''#You need to add a rtsp link
+rtsp_link = os.environ.get('RTSP_URL', '')  # set RTSP_URL, see README
 
 def process_frame(frame):
     frame = cv2.resize(frame, (600, 800))

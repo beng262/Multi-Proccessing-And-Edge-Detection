@@ -1,8 +1,9 @@
 import cv2
+import os
 import time
 import threading
 
-rtsp_link = 'rtsp://user:password@camera-ip:554/Streaming/channels/1001'
+rtsp_link = os.environ.get('RTSP_URL', '')  # set RTSP_URL, see README
 
 class ProcessThread(threading.Thread):
     def __init__(self, frame):

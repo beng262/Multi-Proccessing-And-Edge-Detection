@@ -1,7 +1,8 @@
 import numpy as np
 import cv2
+import os
 
-rtsp_link = ''#You can add your rtsp link
+rtsp_link = os.environ.get('RTSP_URL', '')  # set RTSP_URL, see README
 
 orange_lower = np.array([0, 120, 80])
 orange_upper = np.array([20, 255, 255])
